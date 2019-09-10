@@ -9,3 +9,9 @@ eureka:
     metadataMap:
       instanceId: ${spring.application.name}:${spring.application.instance_id:${server.port}:${random.value}}
 
+zuul:
+  routes:
+    customer-service:
+      path: /customers/**
+      serviceId: customer-service
+      stripPrefix: false
